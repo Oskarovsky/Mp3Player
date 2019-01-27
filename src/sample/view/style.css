@@ -1,0 +1,34 @@
+/* Buttons's background */
+
+#play {
+    -fx-background-image: url("../resources/play.png");
+}
+
+#prev {
+    -fx-background-image: url("../resources/prev.png");
+}
+
+#next {
+    -fx-background-image: url("../resources/next.png");
+}
+
+#logo {
+    -fx-background-image: url("../resources/logo.png")
+}
+
+.button,
+.toggle-button {
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 70% 70%;
+    -fx-background-color: transparent;
+    -fx-opacity: 40%;
+}
+
+
+/* Buttons after pointing */
+.button:hover,
+.toggle-button:hover,
+.toggle-button:selected {
+    -fx-opacity: 100%;
+}
