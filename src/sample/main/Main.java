@@ -1,4 +1,4 @@
-package sample;
+package sample.main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +13,7 @@ public class Main extends Application {
         final String appName = "Mp3Player v0.4";
         try {
             Parent parent = (Parent) FXMLLoader.load(getClass().getResource(
-                    "sample.fxml"));
+                    "/sample/view/MainPane.fxml"));
             Scene scene = new Scene(parent);
             primaryStage.setTitle(appName);
             primaryStage.setScene(scene);

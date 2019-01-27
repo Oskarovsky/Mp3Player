@@ -1,4 +1,4 @@
-package sample;
+package sample.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,7 +15,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.input.MouseEvent;
 
-public class Controller implements Initializable {
+public class MainController implements Initializable {
 
     @FXML
     private Button nextButton;
