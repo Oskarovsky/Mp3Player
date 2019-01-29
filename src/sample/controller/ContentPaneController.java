@@ -25,34 +25,15 @@ public class ContentPaneController implements Initializable {
     @FXML
     private TableView<Mp3Song> contentTable;
 
+    public TableView<Mp3Song> getContentTable() {
+        return contentTable;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         configureTable();
-        configureTestMp3();
     }
 
-    private void configureTestMp3() {
-        mp3Collection = new Mp3Collection();
-        contentTable.setItems(mp3Collection.getSongList());
-
-        Mp3Song mp3Song = createMp3SongFromPath("test.mp3");
-        mp3Collection.addSong(mp3Song);
-    }
-
-    private Mp3Song createMp3SongFromPath(String filePath) {
-        File file = new File(filePath);
-        Mp3Song result = new Mp3Song();
-        try {
-            MP3File mp3File = new MP3File(file);
-            result.setFilePath(file.getAbsolutePath());
-            result.setTitle(mp3File.getID3v2Tag().getSongTitle());
-            result.setAuthor(mp3File.getID3v2Tag().getLeadArtist());
-            result.setAlbum(mp3File.getID3v2Tag().getAlbumTitle());
-        } catch (IOException | TagException e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
 
     private void configureTable() {
         TableColumn<Mp3Song, String> titleColumn = new TableColumn<Mp3Song, String>(TITLE_COLUMN);
